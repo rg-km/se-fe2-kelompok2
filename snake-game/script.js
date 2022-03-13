@@ -37,6 +37,7 @@ function initSnake() {
     ...initHeadAndBody(),
     direction: initDirection(),
     score: 0,
+    level: 1,
   };
 }
 let snake1 = initSnake();
@@ -111,6 +112,17 @@ function eat(snake, apples) {
     if (snake.head.x == apple.position.x && snake.head.y == apple.position.y) {
       apple.position = initPosition();
       snake.score++;
+      if (snake.score % 5 === 0) {
+        MOVE_INTERVAL -= 20;
+        alert("level " + snake.level + " complate");
+        snake.level++;
+        if (snake.level === 6) {
+          MOVE_INTERVAL = 120;
+          snake.level = 1;
+          snake1 = initSnake();
+          initGame();
+        }
+      }
       snake.body.push({ x: snake.head.x, y: snake.head.y });
     }
   }
