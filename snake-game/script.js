@@ -154,6 +154,27 @@ function moveUp(snake) {
   eat(snake, apples);
 }
 
+function checkCollision(snakes) {
+  let isCollide = false;
+  for (let i = 0; i < snakes.length; i++) {
+    for (let j = 0; j < snakes.length; j++) {
+      for (let k = 1; k < snakes[j].body.length; k++) {
+        if (snakes[i].head.x == snakes[j].body[k].x && snakes[i].head.y == snakes[j].body[k].y) {
+          isCollide = true;
+          snakes.lifes--;
+        }
+      }
+    }
+  }
+  if (isCollide) {
+    alert("Game over");
+    MOVE_INTERVAL = 120;
+    level = 1;
+    snake1 = initSnake();
+  }
+  return isCollide;
+}
+
 function move(snake) {
   switch (snake.direction) {
     case DIRECTION.LEFT:
@@ -170,9 +191,13 @@ function move(snake) {
       break;
   }
   moveBody(snake);
-  setTimeout(function () {
-    move(snake);
-  }, MOVE_INTERVAL);
+  if (!checkCollision([snake1])) {
+    setTimeout(function () {
+      move(snake);
+    }, MOVE_INTERVAL);
+  } else {
+    initGame();
+  }
 }
 
 function moveBody(snake) {
