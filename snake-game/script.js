@@ -91,8 +91,32 @@ function draw() {
       var img = document.getElementById("apple");
       ctx.drawImage(img, apple.position.x * CELL_SIZE, apple.position.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
     }
-    
-    
+
+
+    if (snake1.level == 2){
+      for (let i = 0; i < 6; i++){
+        ctx.drawImage(obstacleWall, CELL_SIZE*i+140, CELL_SIZE+170, CELL_SIZE+2, CELL_SIZE+2);
+      }      
+    } else if (snake1.level == 3){
+      for (let i = 0; i < 6; i++){
+        ctx.drawImage(obstacleWall, CELL_SIZE*i+140, CELL_SIZE+140, CELL_SIZE+2, CELL_SIZE+2);
+        ctx.drawImage(obstacleWall, CELL_SIZE*i+140, CELL_SIZE+200, CELL_SIZE+2, CELL_SIZE+2);
+      }
+    } else if ( snake1.level == 4){
+      for (let i = 0; i < 6; i++){
+        ctx.drawImage(obstacleWall, CELL_SIZE*i+140, CELL_SIZE+140, CELL_SIZE+2, CELL_SIZE+2);
+        ctx.drawImage(obstacleWall, CELL_SIZE*i+140, CELL_SIZE+200, CELL_SIZE+2, CELL_SIZE+2);        
+        ctx.drawImage(obstacleWall, CELL_SIZE+300, CELL_SIZE*i+250, CELL_SIZE+2, CELL_SIZE+2);
+      }
+    } else if ( snake1.level == 5){
+      for (let i = 0; i < 6; i++){
+        ctx.drawImage(obstacleWall, CELL_SIZE*i+140, CELL_SIZE+140, CELL_SIZE+2, CELL_SIZE+2);
+        ctx.drawImage(obstacleWall, CELL_SIZE*i+140, CELL_SIZE+200, CELL_SIZE+2, CELL_SIZE+2);        
+        ctx.drawImage(obstacleWall, CELL_SIZE+300, CELL_SIZE*i+250, CELL_SIZE+2, CELL_SIZE+2);        
+        ctx.drawImage(obstacleWall, CELL_SIZE+40, CELL_SIZE*i+30, CELL_SIZE+2, CELL_SIZE+2);
+      } 
+    }     
+   
     drawScore(snake1);
     document.getElementById("speed").innerHTML = MOVE_INTERVAL;
     document.getElementById("level").innerHTML = snake1.level;
