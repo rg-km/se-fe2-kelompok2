@@ -72,8 +72,8 @@ function drawCell(ctx, x, y, color, level) {
   ctx.fillStyle = color;
   for (let i = 0; i <= 15; i++) {
     if (level == 2) {
-      ctx.fillRect((x + i) * (CELL_SIZE - 10), y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
-      ctx.fillRect((x + i) * (CELL_SIZE - 10), (y + 5) * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+      ctx.fillRect((x + i) * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+      ctx.fillRect((x + i) * CELL_SIZE, (y + 5) * CELL_SIZE, CELL_SIZE, CELL_SIZE);
     } else if (level == 3) {
       ctx.fillRect((x + i) * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
       ctx.fillRect((x + i) * CELL_SIZE, (y + 5) * CELL_SIZE, CELL_SIZE, CELL_SIZE);
