@@ -87,6 +87,8 @@ function draw() {
     }
 
     drawScore(snake1);
+    document.getElementById("speed").innerHTML = MOVE_INTERVAL;
+    document.getElementById("level").innerHTML = snake1.level;
   }, REDRAW_INTERVAL);
 }
 
