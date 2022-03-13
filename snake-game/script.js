@@ -167,10 +167,13 @@ function checkCollision(snakes) {
     }
   }
   if (isCollide) {
+    var audio = new Audio("assets/game-over.mp3");
+    audio.play();
     alert("Game over");
     MOVE_INTERVAL = 120;
     level = 1;
     snake1 = initSnake();
+
   }
   return isCollide;
 }
