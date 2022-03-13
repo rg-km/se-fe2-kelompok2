@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  background: azure;
+  font-family: Helvetica;
+}
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+}
+.description {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nameGame {
+  text-align: right;
+}
+.speedText {
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+.textLevel h2 {
+  font-family: 18;
+  font-weight: 600;
+}
+
+.textScore {
+  font-family: 16;
+  font-weight: 500;
+}
+
+#score1Board {
+  text-align: center;
+  background-color: skyblue;
+  box-shadow: skyblue 0px 4px 12px;
+  border: 1px solid skyblue;
+  color: white;
+}
+
+#snakeBoard {
+  background: whitesmoke;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}

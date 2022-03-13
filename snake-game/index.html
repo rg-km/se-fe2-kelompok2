@@ -1,14 +1,29 @@
 <html>
   <head> </head>
+  <link rel="stylesheet" href="style.css">
   <script type="text/javascript" src="script.js"></script>
   <body onload="draw();">
-    <h1>Snake</h1>
-    <!-- Soal no 3: Tambahkan resource gambar untuk ditampilkan di canvas -->
-    <img id="apple" style="display: none" width="20" height="20" src="assets/apple.png" alt="Apple" />
-    <img id="snakeHead" style="display: none" width="20" height="20" src="assets/head_snake.png" alt="Head" />
-    <img id="snakeBody" style="display: none" width="20" height="20" src="assets/body.png" alt="Body" />
-    <!-- Soal no 1: Ubah nilai width dan height menjadi 600 pada element canvas:  -->
-    <canvas id="snakeBoard" width="600" height="600" style="border: 1px solid #000000"></canvas>
-    <canvas id="score1Board" width="100" height="100" style="border: 1px solid #000000"></canvas>
+    <div class="wrapper">
+      <div class="board">
+        <h1 class="nameGame">Snake Game</h1>
+        <!-- Tambahkan resource gambar untuk ditampilkan di canvas -->
+        <img id="apple" style="display: none" width="20" height="20" src="assets/apple.png" alt="Apple" />
+        <img id="snakeHead" style="display: none" width="20" height="20" src="assets/head_snake.png" alt="Head" />
+        <img id="snakeBody" style="display: none" width="20" height="20" src="assets/body.png" alt="Body" />
+        <img id="obstacleWall" style="display: none" width="5" height="5" src="assets/obstacle_wall.png" alt="obstacle wall"/>
+        <!-- Ubah nilai width dan height menjadi 600 pada element canvas:  -->
+        <canvas id="snakeBoard" width="400" height="400"></canvas>
+
+        <!-- Menampilkan level, nilai score dan kecepatan -->
+        <div class="description">
+          <h2 class="textLevel">Level <span id="level"></span></h2>
+          <h2 class="textScore">Score <span id="score"></span></h2>
+          <div class="score">
+            <canvas id="score1Board" width="100" height="100"></canvas>
+          </div>
+          <h2 class="speedText">Speed <span id="speed"></span> ms</h2>
+      </div>
+    </div>
+  </div>
   </body>
 </html>
