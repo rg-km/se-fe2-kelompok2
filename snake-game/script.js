@@ -307,11 +307,17 @@ function cekRintangancollecsion(snake) {
   return isCollide;
 }
 
+function soundMakan() {
+  let makan = new Audio("./assets/suara_makan.mp3");
+  makan.play();
+}
+
 function eat(snake, apple) {
   cekRintangan(snake);
   if (snake.head.x == apple.position.x && snake.head.y == apple.position.y) {
     apple.position = initPosition();
     snake.score++;
+    soundMakan();
     naikLevel(snake);
     snake.body.push({ x: snake.head.x, y: snake.head.y });
     if (snake.score > 1 && bilanganPrima(snake.score) == true) {
@@ -324,6 +330,7 @@ function eat(snake, apple) {
   } else if (snake.head.x == apple2.position.x && snake.head.y == apple2.position.y) {
     apple2.position = initPosition();
     snake.score++;
+    soundMakan();
     naikLevel(snake);
     snake.body.push({ x: snake.head.x, y: snake.head.y });
     if (snake.score > 1 && bilanganPrima(snake.score) == true) {
@@ -337,6 +344,7 @@ function eat(snake, apple) {
     life.position = initPosition();
     life.status = false;
     snake.score++;
+    soundMakan();
     snake.scorelife++;
   }
 }
@@ -427,7 +435,7 @@ function move(snake) {
     }, MOVE_INTERVAL);
   } else {
     initGame();
-    MOVE_INTERVAL = 100;
+    // MOVE_INTERVAL = 100;
   }
 }
 
