@@ -1,6 +1,6 @@
 const CELL_SIZE = 20;
 // Set canvas size menjadi 600
-const CANVAS_SIZE = 600;
+const CANVAS_SIZE = 400;
 const REDRAW_INTERVAL = 50;
 const WIDTH = CANVAS_SIZE / CELL_SIZE;
 const HEIGHT = CANVAS_SIZE / CELL_SIZE;
@@ -63,9 +63,14 @@ function drawScore(snake) {
   let scoreCtx = scoreCanvas.getContext("2d");
 
   scoreCtx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
-  scoreCtx.font = "30px Arial";
+  scoreCtx.font = "40px Helvetica";
   scoreCtx.fillStyle = snake.color;
-  scoreCtx.fillText(snake.score, 10, scoreCanvas.scrollHeight / 2);
+  if (snake.score > 9){
+    scoreCtx.fillText(snake.score, scoreCanvas.scrollWidth / 3.8, scoreCanvas.scrollHeight / 1.68);
+  } else {
+    scoreCtx.fillText(snake.score, scoreCanvas.scrollWidth / 2.5, scoreCanvas.scrollHeight / 1.68);
+  }
+  
 }
 
 function draw() {
@@ -75,6 +80,7 @@ function draw() {
     ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
     let headSnake = document.getElementById("snakeHead");
     let bodySnake = document.getElementById("snakeBody");
+    let obstacleWall = document.getElementById("obstacleWall");
     ctx.drawImage(headSnake, snake1.head.x * CELL_SIZE, snake1.head.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
     for (let i = 1; i < snake1.body.length; i++) {
       ctx.drawImage(bodySnake, snake1.body[i].x * CELL_SIZE, snake1.body[i].y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
@@ -85,7 +91,8 @@ function draw() {
       var img = document.getElementById("apple");
       ctx.drawImage(img, apple.position.x * CELL_SIZE, apple.position.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
     }
-
+    
+    
     drawScore(snake1);
     document.getElementById("speed").innerHTML = MOVE_INTERVAL;
     document.getElementById("level").innerHTML = snake1.level;
