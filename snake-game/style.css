@@ -6,12 +6,12 @@
 }
 .wrapper {
   width: 100%;
-  height: 100vh;
-  box-sizing: border-box;
+  min-height: 110vh;
+  /* box-sizing: border-box; */
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  /* position: fixed; */
 }
 .description {
   width: 100%;
