@@ -409,6 +409,7 @@ function checkCollision(snakes) {
 
     alert("Game over dengan skor : " + snake1.score + " dan level " + snake1.level);
     snake1 = initSnake("./assets/head_snake.png", "./assets/body.png");
+    MOVE_INTERVAL = 160;
     return isCollide;
   } else if (isWin) {
     alert("You Winner");
