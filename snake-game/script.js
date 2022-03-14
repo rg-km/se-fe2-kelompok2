@@ -193,7 +193,7 @@ function drawScore(snake) {
   scoreCtx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
   scoreCtx.font = "30px Arial";
   scoreCtx.fillStyle = "blue";
-  if (snake.score > 9){
+  if (snake.score > 9) {
     scoreCtx.fillText(snake.score, scoreCanvas.scrollWidth / 3.3, scoreCanvas.scrollHeight / 1.48);
   } else {
     scoreCtx.fillText(snake.score, scoreCanvas.scrollWidth / 2.5, scoreCanvas.scrollHeight / 1.48);
@@ -414,6 +414,7 @@ function checkCollision(snakes) {
   } else if (isWin) {
     alert("You Winner");
     snake1 = initSnake("./assets/head_snake.png", "./assets/body.");
+    MOVE_INTERVAL = 160;
     return isWin;
   }
 }
