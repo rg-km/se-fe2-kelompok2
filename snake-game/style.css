@@ -3,15 +3,15 @@
   padding: 0;
   background: azure;
   font-family: Helvetica;
+  box-sizing: border-box;
 }
 .wrapper {
   width: 100%;
-  min-height: 110vh;
-  /* box-sizing: border-box; */
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* position: fixed; */
+  position: fixed;
 }
 .description {
   width: 100%;

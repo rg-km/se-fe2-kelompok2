@@ -193,7 +193,11 @@ function drawScore(snake) {
   scoreCtx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
   scoreCtx.font = "30px Arial";
   scoreCtx.fillStyle = "blue";
-  scoreCtx.fillText(snake.score, 40, 35);
+  if (snake.score > 9){
+    scoreCtx.fillText(snake.score, scoreCanvas.scrollWidth / 3.3, scoreCanvas.scrollHeight / 1.48);
+  } else {
+    scoreCtx.fillText(snake.score, scoreCanvas.scrollWidth / 2.5, scoreCanvas.scrollHeight / 1.48);
+  }
 }
 function drawLife(snake) {
   const image = new Image();
